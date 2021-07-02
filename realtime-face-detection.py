@@ -18,7 +18,7 @@ while True:
 
     current_frame_small= cv2.resize(current_frame,(0,0),fx=0.25,fy=0.25)
 
-    all_faces = (face_recognition.face_locations(current_frame_small,model='hog'))
+    all_faces = (face_recognition.face_locations(current_frame_small,number_of_times_to_upsample=2,model='hog'))
 
     for index,face in enumerate(all_faces):
         top_pos , right_pos,bottom_pos,left_pos = face
